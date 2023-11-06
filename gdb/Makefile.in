@@ -474,6 +474,7 @@ SELFTESTS_SRCS = \
 	unittests/parallel-for-selftests.c \
 	unittests/parse-connection-spec-selftests.c \
 	unittests/path-join-selftests.c \
+	unittests/prologue_value-selftests.c \
 	unittests/ptid-selftests.c \
 	unittests/main-thread-selftests.c \
 	unittests/mkdir-recursive-selftests.c \
