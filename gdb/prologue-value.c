@@ -63,7 +63,7 @@ pv_register (int reg, CORE_ADDR k)
 /* If one of *A and *B is a constant, and the other isn't, swap the
    values as necessary to ensure that *B is the constant.  This can
    reduce the number of cases we need to analyze in the functions
-   below.  */
+   below.  It can only be used in commutative functions like add. */
 static void
 constant_last (pv_t *a, pv_t *b)
 {
@@ -123,8 +123,6 @@ pv_subtract (pv_t a, pv_t b)
      frame pointer is set based on the SP, its value will be the
      original SP plus some constant (probably zero), so we can use its
      value just fine, too.  */
-
-  constant_last (&a, &b);
 
   /* We can subtract two constants.  */
   if (a.kind == pvk_constant
